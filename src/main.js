@@ -25,8 +25,8 @@ new Vue({
 	data() {
 		return {
 			urls: {
-				base: 'https://www.korapatti.com/projects/mothersserve/code',
-				api: 'https://www.korapatti.com/projects/mothersserve/code/mobileapp_api/api'
+				base: 'http://http://52.76.3.147',
+				api: 'http://http://52.76.3.147/mobileapp_api/api'
 			}
 		}
 	},
