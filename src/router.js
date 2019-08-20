@@ -1,6 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import MenuItems from './resource/frontend/js/components/MenuItems.vue'
+import orderNow from './resource/frontend/js/components/OrderNow.vue'
+import Checkout from './resource/frontend/js/components/Checkout.vue'
+import ConfirmOrder from './resource/frontend/js/components/ConfirmOrder.vue'
 
 Vue.use(Router)
 
@@ -11,15 +14,31 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: Home
+      component: MenuItems
     },
     {
-      path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      path: '/orderNow',
+      name: 'orderNow',
+     component: orderNow
+    },
+    {
+      path: '/Checkout',
+      name: 'Checkout',
+     component: Checkout
+    },
+    {
+      path: '/ConfirmOrder',
+      name: 'ConfirmOrder',
+     component: ConfirmOrder
     }
-  ]
+  ],
+
+  scrollBehavior (to, from, savedPosition) {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ x: 0, y: 0 })
+      }, 10)
+    })
+  },
+
 })
